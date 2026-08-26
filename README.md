@@ -1,10 +1,10 @@
-# 🔗 Connectivité Hybride Cloud — AWS Transit Gateway & Site-to-Site VPN
+# Connectivité Hybride Cloud — AWS Transit Gateway & Site-to-Site VPN
 
 [![Terraform](https://img.shields.io/badge/IaC-Terraform-844FBA?logo=terraform)](https://www.terraform.io/)
 [![AWS](https://img.shields.io/badge/Cloud-AWS-FF9900?logo=amazonaws)](https://aws.amazon.com/)
 [![Status](https://img.shields.io/badge/status-en%20cours-yellow)]()
 
-## 🎯 Objectif du projet
+## Objectif du projet
 
 Concevoir et déployer une architecture réseau **hub-and-spoke** connectant un datacenter
 on-premise à trois environnements AWS (**Dev / Staging / Prod**) via **AWS Transit Gateway**,
@@ -14,7 +14,7 @@ et une inspection du trafic **est-ouest**.
 Ce projet illustre des compétences réseau (BGP, VPN IPsec, plan d'adressage) appliquées à une
 infrastructure cloud AWS, dans une logique d'architecte réseaux & cloud.
 
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 flowchart LR
@@ -63,7 +63,7 @@ flowchart LR
 | **AWS Network Firewall** | Inspection stateful du trafic est-ouest entre VPC |
 | **AWS RAM** | Partage du Transit Gateway entre comptes AWS (organisation multi-comptes) |
 
-## 📁 Structure du dépôt
+## Structure du dépôt
 
 ```
 .
@@ -77,7 +77,7 @@ flowchart LR
 └── README.md
 ```
 
-## 🚀 Déploiement
+## Déploiement
 
 ### Prérequis
 - Un compte AWS avec les droits nécessaires (VPC, EC2, Transit Gateway, Route 53, Network Firewall, RAM)
@@ -104,7 +104,7 @@ terraform apply tfplan
 terraform destroy
 ```
 
-## 🧠 Points techniques abordés
+## Points techniques abordés
 
 - Conception d'un **plan d'adressage CIDR** multi-environnements sans chevauchement
 - Topologie **hub-and-spoke** avec Transit Gateway et tables de routage dédiées
@@ -113,14 +113,14 @@ terraform destroy
 - Inspection **est-ouest** avec Network Firewall (stateful rule groups)
 - Partage de ressources réseau entre comptes via **AWS RAM**
 
-## 🔮 Améliorations futures
+## Améliorations futures
 
 - [ ] Ajouter une deuxième connexion VPN pour la redondance (tunnel actif/actif)
 - [ ] Comparer avec une implémentation Direct Connect
 - [ ] Ajouter des tests automatisés (Terratest) et un pipeline CI/CD
 - [ ] Diagramme d'architecture exporté en image (draw.io) dans `docs/`
 
-## 👤 Auteur
+## Auteur
 
 **Ahmed Bakir** — Étudiant Ingénieur Réseaux & Cloud (EPSI Lyon / ENIG)
 [LinkedIn](https://linkedin.com/in/ahmed-bk) · [GitHub](https://github.com/BakirAhmed)
